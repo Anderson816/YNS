@@ -1,0 +1,10 @@
+/* File: app/static/css/style.css */
+
+body { background-color: #f5f8fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+h3, h4, label { color: #1a1a1a; }
+
+textarea, input[type="text"], input[type="number"], input[type="password"] { border-radius: 5px; }
+
+button { width: 100%; padding: 10px; }
+

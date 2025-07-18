@@ -1,0 +1,22 @@
+<!-- File: app/templates/status.html -->{% extends 'base.html' %} {% block content %}
+
+<h4 class="mb-3">Final Step: UPI Payment / ಅಂತಿಮ ಹಂತ: ಯುಪಿಐ ಪಾವತಿ</h4>
+<p class="text-danger">Amount Due: ₹149 / ಬಾಕಿ ಮೊತ್ತ: ₹149</p>
+<div class="text-center">
+    <img src="{{ url_for('static', filename='images/upi.png') }}" alt="UPI QR" class="img-fluid mb-3" style="max-height: 200px;">
+    <p>Please complete the payment. Redirecting in <span id="countdown">60</span> seconds...</p>
+    <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading" style="height: 50px;">
+</div>
+<script>
+let timeLeft = 60;
+const countdown = document.getElementById('countdown');
+const interval = setInterval(() => {
+    timeLeft--;
+    countdown.innerText = timeLeft;
+    if (timeLeft <= 0) {
+        clearInterval(interval);
+        window.location.href = "{{ url_for('main.success') }}";
+    }
+}, 1000);
+</script>
+{% endblock %}

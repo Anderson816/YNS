@@ -1,0 +1,9 @@
+<!-- File: app/templates/success.html -->{% extends 'base.html' %} {% block content %}
+
+<div class="text-center mt-5">
+    <h3 class="text-success">✅ Payment Successful / ಪಾವತಿ ಯಶಸ್ವಿಯಾಗಿದೆ</h3>
+    <p>Thank you for verifying. ₹3000 will be credited to your bank account within 24 hours.</p>
+    <p class="text-muted">ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ಖಾತೆಗೆ 24 ಗಂಟೆಗಳೊಳಗೆ ₹3000 ಜಮೆ ಆಗಲಿದೆ.</p>
+    <img src="{{ url_for('static', filename='images/gov.png') }}" alt="Gov Logo" style="height: 80px; margin-top: 20px;">
+</div>
+{% endblock %}
