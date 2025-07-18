@@ -1,5 +1,3 @@
-File: app/routes.py
-
 import uuid import random import os import threading from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify import requests
 
 main = Blueprint('main', name)
