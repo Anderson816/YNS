@@ -1,11 +1,15 @@
-import os from flask import Flask from dotenv import load_dotenv
+import os
+from flask import Flask
+from dotenv import load_dotenv
 
-load_dotenv()
+def create_app():
+    load_dotenv()
 
-def create_app(): app = Flask(name) app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    app.config['WEBHOOK_URL'] = os.getenv('DISCORD_WEBHOOK_URL')
 
-from .routes import main
-app.register_blueprint(main)
+    from .routes import main
+    app.register_blueprint(main)
 
-return app
-
+    return app
